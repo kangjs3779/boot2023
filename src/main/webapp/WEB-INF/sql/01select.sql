@@ -5,13 +5,15 @@
 -- 행(row, record)
 -- 열(colum, field, attribute)
 
--- SELECT 열 목록을 나열
--- FROM 테이블
+-- SELECT 열 목록을 나열 FROM 테이블
 -- 쿼리끝에 ; 작성
 
 -- Customers 테이블에서
 -- 모든 레코드(행)와 모든 필드(열)을 가져와라(읽어라)
 SELECT * FROM Customers;
+SELECT ProductName FROM Products WHERE ProductID = 3;
+SELECT CustomerName FROM Customers;
+SELECT FirstName FROM Employees;
 
 -- 문제1) Employees 테이블에서 모든 행과 열을 읽어라
 SELECT * FROM Employees;
