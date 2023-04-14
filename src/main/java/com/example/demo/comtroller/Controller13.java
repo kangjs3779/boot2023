@@ -125,36 +125,39 @@ public class Controller13 {
 	}
 	
 	//특정 아이디를 검색을 하면 특정 아이디를 가진 고객의 정보가 나오도록 함
-	//경로 : /sub13/link4?id=
 	//선생님 코드랑 비교 할 것
 	//선생님 코드 복붙하고 내가 따로 파일 만들어보기
 	@RequestMapping("link4")
-	public void method4 (@RequestParam int id) {
-		String sql = "SELECT CustomerId, CustomerName, Address FROM Customers WHERE CustomerId = ";
-		sql += id;
+	public String method4 (@RequestParam String id, Model model) throws Exception{
+		//경로 : /sub13/link4?id=5
 		//이렇게 연결 연산자로 쓰면 위험한 코드가 된다
 		//sql injection공격이라고 한다
 		List<Customer> list = new ArrayList<>();
-		
-		try (
-				Connection con = DriverManager.getConnection(url, name, password);
-				Statement stmt = con.createStatement();
-				ResultSet rs = stmt.executeQuery(sql);
-				) {
-			while(rs.next()) {
-				String customerName = rs.getString(2);
-				String address = rs.getString(3);
-				
+		String sql = """
+				SELECT CustomerId, CustomerName, Address
+				FROM Customers
+				WHERE CustomerId = """;
+		sql += id;
+
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+
+		try (con; stmt; rs;) {
+			while (rs.next()) {
 				Customer customer = new Customer();
-				customer.setName(customerName);
-				customer.setAddress(address);
-				
+				customer.setId(rs.getInt("customerid"));
+				customer.setAddress(rs.getString("address"));
+				customer.setName(rs.getString("customerName"));
+
 				list.add(customer);
 			}
-			
-		} catch (Exception e) {
-			e.printStackTrace();
+
 		}
+
+		model.addAttribute("customerList", list);
+
+		return "/sub13/link1";
 		
 		
 	}
