@@ -14,7 +14,7 @@ public class Controller11 {
 
 	@Value("${spring.datasource.url}")
 	private String url;
-	@Value("${spring.datasource.name}")
+	@Value("${spring.datasource.username}")
 	private String name;
 	@Value("${spring.datasource.password}")
 	private String password;
@@ -134,4 +134,13 @@ public class Controller11 {
 		}
 		model.addAttribute("fistNames", list);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+
 }
