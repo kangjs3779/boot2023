@@ -29,10 +29,17 @@ public class SupplierController {
 	
 	//아이디, 이름, 국적, 주소, 번호, 계약 이름이 표시되고
 	//계약이름은 파란색으로 표시하도록 한다 
-	@RequestMapping("SuppliersSearch")
-	public void method1 () {
+	@RequestMapping("Homepage")
+	public void method1 (Model model) throws Exception{
+		String sql = "SELECT now()";
+		String time = "";
 		
-//		return "/review1/SuppliersINFO";
+		Connection con = DriverManager.getConnection(url, name, password);
+		Statement stmt = con.createStatement();
+		ResultSet rs = stmt.executeQuery(sql);
+		time = rs.toString();
+		
+		model.addAttribute("now", time);
 	}
 	
 	
@@ -63,10 +70,21 @@ public class SupplierController {
 		
 	}
 	
+	@RequestMapping("join")
+	public void method3() {
+		
+	}
 	
 	
+	@RequestMapping("makeGamePage")
+	public void method4() {
+		
+	}
 	
-	
+	@RequestMapping("makeToDoListPage")
+	public void method5() {
+		
+	}
 	
 	
 	
