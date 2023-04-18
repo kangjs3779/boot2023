@@ -1,14 +1,18 @@
 package com.example.demo.domain;
 
 public class Employee {
-	private int id;
+	private int employeeId;
 	private String lastName;
 	private String firstName;
-	public int getId() {
-		return id;
+	private String birthDate;
+	private boolean photo;
+	private String note;
+	
+	public int getEmployeeId() {
+		return employeeId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setEmployeeId(int employeeId) {
+		this.employeeId = employeeId;
 	}
 	public String getLastName() {
 		return lastName;
@@ -22,5 +26,25 @@ public class Employee {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	public String getBirthDate() {
+		return birthDate;
+	}
+	public void setBirthDate(String birthDate) {
+		this.birthDate = birthDate;
+	}
+	public boolean isPhoto() {
+		return photo;
+	}
+	public void setPhoto(boolean photo) {
+		this.photo = photo;
+	}
+	public String getNote() {
+		return note;
+	}
+	public void setNote(String note) {
+		this.note = note;
+	}
+	
+	
 	
 }
