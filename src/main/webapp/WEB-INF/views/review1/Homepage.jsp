@@ -15,7 +15,7 @@
 	</div>
 
 	<!-- nav bar -->
-	<div class="mx-auto w-25 p-3">
+	<div class="mx-auto w-50 p-3">
 		<ul class="nav nav-tabs">
 			<li class="nav-item">
 				<a class="nav-link active" aria-current="page" href="#">Home</a>

@@ -10,7 +10,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
 <body>
-
+	<!-- 페이지 이름 -->
 	<div class="container text-center">
 		<h1>Sign Up</h1>
 	</div>
@@ -20,10 +20,11 @@
 		<!-- 이메일 입력  -->
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label"> Email address </label>
-			<input type="email" class="form-control joinInfo" id="exampleFormControlInput1" placeholder="name@example.com">
+			<input type="email" class="form-control joinInfo" id="exampleFormControlInput1" placeholder="ID@example.com">
 
 			<div id="passwordHelpBlock" class="form-text">이메일 형태로 적어주세요.</div>
 		</div>
+		
 		<!-- 이메일 중복 확인 버튼  -->
 		<button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#emailCheck">ID check!</button>
 		<div id="passwordHelpBlock" class="form-text">아이디 중복확인을 하였습니다.</div>
@@ -78,6 +79,7 @@
 
 
 		<br>
+		<!-- 이름 적기 -->
 		<div class="row">
 			<div class="col">
 				<label for="firstName" class="form-label"> First Name </label>
@@ -88,8 +90,9 @@
 				<input type="text" class="form-control joinInfo" placeholder="Last name" aria-label="Last name" id="lastName">
 			</div>
 			<div id="passwordHelpBlock" class="form-text">이름은 영어로 입력해주세요.</div>
-
 		</div>
+		
+		<!-- 폰번호 적기 -->
 		<br>
 		<div class="col-12">
 			<label for="inputAddress" class="form-label">Phone Number</label>
@@ -97,6 +100,8 @@
 		</div>
 		<div id="passwordHelpBlock" class="form-text">입력할 때, -를 빼고 적어주세요.</div>
 		<br>
+		
+		<!-- 주소 입력하기 -->
 		<div class="col-12">
 			<label for="inputAddress" class="form-label">Address</label>
 			<input type="number" class="form-control joinInfo" id="inputAddress" placeholder="주소 입력">
@@ -105,7 +110,8 @@
 			<label for="inputAddress2" class="form-label">Address 2</label>
 			<input type="text" class="form-control joinInfo" id="inputAddress2" placeholder="상세 주소 입력">
 		</div>
-
+		
+		<!-- 국가 선택하기 -->
 		<div class="col-md-6">
 			<label for="inputState" class="form-label">Country</label>
 			<select id="inputState" class="form-select joinInfo">
@@ -117,21 +123,27 @@
 				<option>Germany</option>
 			</select>
 		</div>
+		
+		<!-- 우편번호 입력하기 -->
 		<div class="col-md-6">
 			<label for="inputZip" class="form-label">Zip</label>
 			<input type="text" class="form-control joinInfo" id="inputZip">
 		</div>
+		
+		<!-- 정보가 모두 입력되었는지 확인 -->
+		<!-- 입력이 되었으면 파란색 아니면 빨간색 -->
 		<div class="card-body">
 			<p class="card-text">정보를 모두 입력해주세요.</p>
 		</div>
 
-		<!-- 회원가입 버튼  -->
+		<!-- 회원가입 버튼, 돌아가기 버튼 -->
 		<div class="container text-center ">
 			<button class="btn btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#joinCompleteModal1">sign up</button>
 			<a href="Homepage" class="btn btn-outline-secondary">back</a>
 		</div>
 
-		<!-- join Modal -->
+		<!-- 회원가입 Modal -->
+		<!-- 입력 문장이 파란색이면 완료, 아니면 정보를 모두 입력해주세요 모달 추가 -->
 		<div class="modal fade" id="joinCompleteModal1" tabindex="-1" aria-labelledby="joinCompleteModalLabel" aria-hidden="true">
 			<div class="modal-dialog">
 				<div class="modal-content">
