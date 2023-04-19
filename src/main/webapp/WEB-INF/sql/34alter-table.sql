@@ -1,0 +1,50 @@
+-- ALTER TABLE : 테이블 변경
+CREATE TABLE MyTable13 (
+	col1 INT,
+    col2 INT
+);
+DESC MyTable13;
+INSERT INTO MyTable13 (col1, col2) VALUES (1, 2); 
+-- 컬럼 추가 ADD COLUMN
+ALTER TABLE MyTable13
+ADD COLUMN col3 VARCHAR(50);
+
+SELECT * FROM MyTable13;
+
+ALTER TABLE MyTable13
+ADD COLUMN col4 VARCHAR(3);
+
+SELECT * FROM MyTable13;
+
+-- 추가한 colum이 첫번쨰였으면 좋겠다
+ALTER TABLE MyTable13 
+ADD COLUMN col6 INT FIRST;
+
+-- 연습 5번쨰 컬럼 추가
+ALTER TABLE MyTable13
+ADD COLUMN col5 INT;
+
+ALTER TABLE MyTable13 ADD COLUMN col7 INT FIRST;
+
+
+-- 중간에 컬럼 추가
+ALTER TABLE MyTable13 
+ADD COLUMN col8 VARCHAR(9) 
+AFTER col7;
+SELECT * FROM MyTable13;
+
+-- 연습 첫번째 컬럼 추가, 컴럼을 중간에 추가
+ALTER TABLE MyTable13 ADD COLUMN col9 INT FIRST;
+ALTER TABLE MyTable13 ADD COLUMN col10 VARCHAR(5) AFTER col4;
+SELECT * FROM MyTable13;
+
+
+
+
+
+
+
+
+
+
+

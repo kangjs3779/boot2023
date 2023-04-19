@@ -1,0 +1,41 @@
+-- NOT NULL : NULL 허용 안함
+CREATE TABLE MyTable17 (
+	Col1 INT,
+    Col2 INT NOT NULL
+);
+
+INSERT INTO MyTable17 (Col1, Col2)
+VALUES (100, 200);
+INSERT INTO MyTable17 (Col2)
+VALUES (200);
+INSERT INTO MyTable17 (Col1)
+VALUES (100); -- fail
+SELECT * FROM MyTable17;
+
+CREATE TABLE MyTable18 (
+	Col1 INT,
+    Con2 INT NOT NULL
+);
+INSERT INTO MyTable18 VALUES (3, 5);
+INSERT INTO MyTable18 (Col1) VALUES (3); -- faile
+INSERT INTO MyTable18 (Con2) VALUES (4);
+DESC MyTable18;
+
+CREATE TABLE MyTable19 (
+	Col1 INT DEFAULT 0,
+    Col2 INT NOT NULL
+);
+DESC MyTable19;
+-- 코드 복사
+
+-- not null default 조합 가능
+CREATE TABLE MyTable20 (
+	Col1 INT,
+    Co12 INT NOT NULL,
+    Col3 INT DEFAULT 0,
+    Col4 INT NOT NULL DEFAULT 0
+);
+
+DESC MyTable20;
+INSERT INTO MyTable20 VALUES (1, 3, 3, null);
+

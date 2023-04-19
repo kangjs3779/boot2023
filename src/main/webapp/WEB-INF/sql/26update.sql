@@ -56,3 +56,6 @@ VALUES(2, 'pizza', null, null, null, 100);
 UPDATE Products
 SET Price = Price * 1300;
 
+SELECT * FROM Customers;
+
+SELECT * FROM Employees;

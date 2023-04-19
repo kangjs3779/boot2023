@@ -7,6 +7,8 @@ SELECT ProductName, Price * 1300 wonPrice FROM Products;
 SELECT ProductName, Price / 100 FROM Products;
 SELECT ProductName, Price + 100 FROM Products;
 SELECT ProductName, Price - 100 FROM Products;
+SELECT ProductName, Price * 100 FROM Products;
+SELECT ProductName, Price % 100 FROM Products;
 
 -- 문자열 연결
 SELECT City + Country FROM Customers; -- 안된다

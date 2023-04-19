@@ -1,0 +1,33 @@
+-- default 기본값 정할 수 있음
+CREATE TABLE MyTable14 (
+	Col1 INT,
+    Col2 INT DEFAULT 99
+);
+INSERT INTO MyTable14 (Col1, Col2)
+VALUES (100, 200);
+INSERT INTO MyTable14 (Col1)
+VALUES (100);
+INSERT INTO MyTable14 (Col2)
+VALUES (200);
+
+SELECT * FROM MyTable14;
+
+CREATE TABLE MyTable15 (
+	Col1 VARCHAR(30),
+    Col2 VARCHAR(30) DEFAULT '기본'
+);
+
+INSERT INTO MyTable15 VALUES ('r', 't');
+INSERT INTO MyTable15 (Col1) VALUES ('r');
+INSERT INTO MyTable15 (Col2) VALUES ('r');
+SELECT * FROM MyTable15;
+
+DESC MyTable15;
+
+CREATE TABLE MyTable16 (
+	Col1 DATE DEFAULT '2000-01-01',
+    Col2 DATE DEFAULT NOW(),
+    Col3 DATETIME DEFAULT '1999-01-01 00:00:00'
+);
+
+DESC MyTable16;
