@@ -16,6 +16,20 @@
 	<h3>Fist Name : ${employee.firstName }</h3>
 	<h3>Birth Date : ${employee.birthDate }</h3>
 	<h3>Note : ${employee.note }</h3>
+	
+	<div class="container">
+		<table class="table">
+			<thead>
+				<th>Last Name</th>
+				<th>First Name</th>
+				<th>Birth Day</th>
+				<th>Note</th>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</div>
 		
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>

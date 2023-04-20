@@ -1,7 +1,10 @@
 package com.example.demo.domain;
 
+import lombok.*;
+
+@ToString
 public class Supplier {
-	private int id;
+	private int supplierId;
 	private String name;
 	private String contactName;
 	private String address;
@@ -10,11 +13,11 @@ public class Supplier {
 	private String country;
 	private String phone;
 	
-	public int getId() {
-		return id;
+	public int getSupplierId() {
+		return supplierId;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setSupplierId(int id) {
+		this.supplierId = id;
 	}
 	public String getName() {
 		return name;

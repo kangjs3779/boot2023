@@ -41,7 +41,7 @@ public class EmployeeController {
 			pstmt.setInt(1, employee.getEmployeeId());
 			ResultSet rs = pstmt.executeQuery();
 			
-			while(rs.next()) {
+			if (rs.next()) {
 				employee.setEmployeeId(rs.getInt(1));
 				employee.setLastName(rs.getNString(2));
 				employee.setFirstName(rs.getString(3));
