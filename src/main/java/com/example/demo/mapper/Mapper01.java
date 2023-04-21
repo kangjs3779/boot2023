@@ -55,30 +55,9 @@ public interface Mapper01 {
 			FROM MyTable33
 			LIMIT 1
 			"""
-			
 			)
 	int method6();
 	
-	//--------------------------------------- 내가 한거
-//	
-//	@Select("""
-//			SELECT Weight
-//			FORM MyTable33
-//			WHERE 
-//			""")
-//	//코드 복사
-//	
-//	@Select ("""
-//			SERECVT Ttile,
-//					published,
-//					price,
-//					weighted,
-//			FORM MyTable33
-//					limit 1
-//			"""
-//		)// 컬렁명 과 대소문자 구분 없이 매치돼는 빈의 프로퍼티며
-//	String method10();
-	//------------------------------------------ 내가 한거
 	@Select("""
 			SELECT Weight
 			FROM MyTable33

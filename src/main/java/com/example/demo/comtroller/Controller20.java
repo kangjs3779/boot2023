@@ -50,29 +50,7 @@ public class Controller20 {
 	public void method5(int id) {
 		System.out.println(mapper.method5(id));
 	}
-	//-----------------------------------------------
-//	@RequestMapping("link6")
-//	public void method6() {
-//		System.out.println(mapper.method6());
-//		//코드 볻사
-//		//3시떠 수업 다시 듣기
-////		Double weight = mapper.method7();
-////		System.out.println(meught);
-//	}
-//	
-//	
-//	//7번 8qjs 9qjs  고드 비교하면서 확인해보기
-//
-////	@RequestMapping("link7")
-////	public 
-//	
-//	@RequestMapping("link8")
-//	public void method8() {
-//		Dto05 res = mapper.method11();
-//		System.out.println(res);
-//	}
-	
-	//----------------------------------------------- 내가 한거
+
 	@RequestMapping("link6")
 	public void method6() {
 		Integer price = mapper.method6();
