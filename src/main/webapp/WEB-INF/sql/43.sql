@@ -44,3 +44,16 @@ CREATE TABLE MyTable32 (
 );
 SELECT * FROM MyTable32;
 
+CREATE TABLE MyTable33 (
+	Title VARCHAR(30),
+    Published DATE,
+    Price DEC,
+    Updated DATETIME,
+    Weight DEC(10, 3)
+);
+
+SELECT * FROM SupplierIDMyTable33;
+INSERT INTO MyTable33; 
+
+SELECT * FROM SuMyTable07ppliers;
+
