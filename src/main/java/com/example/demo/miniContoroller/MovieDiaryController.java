@@ -1,6 +1,9 @@
 package com.example.demo.miniContoroller;
 
+import java.sql.ResultSet;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +65,24 @@ public class MovieDiaryController {
 	@RequestMapping("delete")
 	public void method5() {
 		//delete check forward
+		
+	}
+	
+	@RequestMapping("deleteCheck")
+	public void method6(String title) {
+		int count = mapper.delete(title);
+		System.out.println(count + "개 삭제됨 ");
+	}
+	
+	@RequestMapping("movieList")
+	public void method7 (Model model) {
+		List<MovieInfo> lists = mapper.list();
+		model.addAttribute("lists", lists);
+	}
+	
+	@RequestMapping("change")
+	public void method8(Model model) {
+		
 	}
 }
 
