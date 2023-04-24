@@ -26,8 +26,8 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${lists }" var="list">
-					<tr>					
-						<td>${list.movieIndex }</td>
+					<tr>												
+						<td><input type="radio" />${list.movieIndex }</td>
 						<td>${list.title }</td>
 						<td>${list.releaseDate }</td>
 						<td>${list.director }</td>

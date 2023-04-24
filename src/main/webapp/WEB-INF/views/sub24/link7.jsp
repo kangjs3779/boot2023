@@ -12,13 +12,13 @@
 </head>
 <body>
 	<h1>${employee.employeeId }번 직원 정보 확인</h1>
-	<form action="link8">
+	<form action="link8" method="post">
 		ID : <input type="hidden" name="employeeId" value="${employee.employeeId }" />
 		Last Name : <input type="text" name="lastName" value="${employee.lastName }"/> <br />
 		First Name : <input type="text" name="firstName" value="${employee.firstName }" /><br />
 		Birth Date : <input type="date" name="birthDate" value="${employee.birthDate }" /><br />
 		Photo : <input type="text" name="photo" value="${employee.photo }"/><br />
-		Notes : <input type="text" name="notes" value="${employee.notes }" /><br />
+		Notes : <textarea type="text" name="notes" value="${employee.notes }" ></textarea><br />
 		<input type="submit"  value="change"/><br />
 	</form>
 	
