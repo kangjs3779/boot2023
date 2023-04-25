@@ -56,6 +56,8 @@ Orders o JOIN OrderDetails d ON o.OrderID = d.OrderID
 		 JOIN Products p ON d.ProductID = p.ProductID
 WHERE o.OrderDate = '1996-07-04';
 
+
+
 -- '1996-07-04'의 매출 조회
 SELECT SUM(od.Quantity * p.Price) 매출
 FROM OrderDetails od JOIN Products p ON od.ProductID = p.ProductID
@@ -70,31 +72,22 @@ WHERE o.OrderDate = '1996-07-04'
 GROUP BY o.OrderDate
 ORDER BY o.OrderDate ASC;
 
--- 직원별 처리금액 (94년 1월의 판매왕을 조회해봐라)
-DESC Employees;
-DESC Orders;
-DESC OrderDetails;
-DESC Products;
-SELECT count(*), EmployeeID FROM Orders;
-SELECT * FROM Orders;
-SELECT count(Orders.EmployeeID) FROM Orders WHERE EmployeeID = 2;
-
-SELECT
-	e.EmployeeID,
-    e.FirstName,
-    e.LastName,
-    d.Quantity * p.Price 매출
+-- 직원별 처리금액 (97년 1월의 판매왕을 조회해봐라)
+SELECT * FROM Employees; -- employeeID
+SELECT * FROM Orders; -- orderID customerID employeeID
+SELECT * FROM OrderDetails; -- orderID productID quantity
+SELECT * FROM Products; -- productID price
+-- 나 ----------------------------------------------------------
+SELECT e.EmployeeID, 
+		concat(e.FirstName, e.LastName) FullName, 
+        SUM(p.price * od.Quantity) 판매금액
 FROM Employees e JOIN Orders o ON e.EmployeeID = o.EmployeeID
-				JOIN OrderDetails d ON o.OrderID = d.OrderID
-                JOIN Products p ON p.ProductID = d.ProductID
+				JOIN OrderDetails od ON o.OrderID = od.OrderID
+				JOIN Products p ON od.ProductID = p.ProductID
 WHERE o.OrderDate BETWEEN '1997-01-01' AND '1997-01-31'
-GROUP BY EmployeeID
-ORDER BY 매출 DESC;
-
-
-
-
-
+GROUP BY FullName
+ORDER BY 판매금액 DESC;
+-- 선생님 ---------------------------------------
 SELECT
  e.EmployeeID,
  e.LastName,
@@ -107,25 +100,49 @@ WHERE o.OrderDate BETWEEN '1997-01-01' AND '1997-01-31'
 GROUP BY e.EmployeeID
 ORDER BY 매출 DESC;
 
-
-
--- 상품별 판매금액
-DESC Products;
-SELECT * FROM Products;
-DESC Categories;
-DESC Orders;
-DESC OrderDetails;
-SELECT CategoryID FROM Products;
-
-
-SELECT Price, count(c.CategoryID)
-FROM
-	Products p JOIN Categories c ON p.CategoryID = c.CategoryID;
-    
-
-    
 	
+-- 상품별 판매금액
 
-
+SELECT * FROM Products; -- productID categoryID price
+SELECT * FROM OrderDetails; -- orderID productID quantity
+SELECT * FROM Orders; -- orderID customerID
+-- 나 --------------------------------------------------------
+SELECT p.ProductId, p.ProductName, SUM(p.price * od.Quantity) 판매금액
+FROM 
+	Products p JOIN OrderDetails od ON p.ProductID = od.ProductID
+GROUP BY p.ProductID
+ORDER BY 판매금액 DESC;
+-- 선생님-----------------------------------------------------
+SELECT p.ProductID, p.ProductName, SUM(od.Quantity * p.Price) 판매금액 
+FROM 
+	Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+             JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY p.ProductID
+ORDER BY 판매금액 DESC;
+-- --------------------------------------------------------------
 
 -- 고객별 소비금액	
+SELECT * FROM Customers; -- customerID
+SELECT * FROM Products; -- ProductID, Price
+SELECT * FROM OrderDetails; -- quantity orderID, productID
+SELECT * FROM Orders; -- customerID orderID
+
+-- 나 ----------------------------------------------------------------------
+SELECT CustomerName, SUM(p.Price * od.Quantity) sum
+FROM
+	Customers c JOIN Orders o ON c.CustomerID = o.CustomerID
+				JOIN OrderDetails od ON o.OrderID = od.OrderID
+                JOIN Products p ON p.ProductID = od.ProductID
+GROUP BY c.CustomerID
+ORDER BY sum DESC;
+	
+-- 선생님 -----------------------------------------------------------------------
+SELECT c.CustomerID, c.CustomerName, SUM(p.Price * od.Quantity) 구매금액 
+FROM
+	Orders o JOIN OrderDetails od ON o.OrderID = od.OrderID
+		     JOIN Customers c ON o.CustomerID = c.CustomerID
+             JOIN Products p ON od.ProductID = p.ProductID
+GROUP BY c.CustomerID
+ORDER BY 구매금액 DESC;
+
+--
