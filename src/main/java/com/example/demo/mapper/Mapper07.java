@@ -11,11 +11,14 @@ public interface Mapper07 {
 	
 	@Select("""
 			SELECT
+				CustomerID id,
 				CustomerName name,
 				Address
 			FROM Customers
-			LIMIT 0, 20
+			LIMIT #{startIndex}, 10
 			""")
 	List<Customer> selectAll(Customer customer);
+
+	void slectPage(Integer page);
 	
 }
