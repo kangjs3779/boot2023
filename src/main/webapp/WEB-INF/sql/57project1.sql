@@ -13,3 +13,9 @@ CREATE TABLE Board (
 ); 
 
 DESC Board;
+
+INSERT INTO Board (title, body, writer)
+VALUES
+	('sample title', 'sample body', 'user00');
+    
+SELECT * FROM Board;
