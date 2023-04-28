@@ -49,4 +49,42 @@ public interface Mapper08 {
 				OR FirstName LIKE #{search}
 			""")
 	List<Employee> sql3(String search);
+
+	@Select("""
+			<script>
+			SELECT COUNT(*)
+			FROM Customers
+			
+			<if test="false">
+			WHERE CustomerID = 10
+			</if>
+			</script>
+			""")
+	Integer sql4();
+	
+	@Select("""
+			<script>
+			SELECT COUNT(*)
+			FROM Customers
+			
+			<if test="keyword neq null">
+				<bind name="pattern" value="'%' + keyword + '%'" />
+				WHERE CustomerName LIKE #{pattern}
+			</if>
+			</script>
+			
+			""")
+	Integer sql5(String keyword);
+
+	@Select("""
+			<script>
+			SELECT AVG(Price)
+			FROM Products
+			
+			<if test="i gt 0">
+			WHERE CategoryId = #{i}
+			</if>
+			</script>
+			""")
+	Double sql6(int i);
 }

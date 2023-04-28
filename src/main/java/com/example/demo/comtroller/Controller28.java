@@ -39,7 +39,28 @@ public class Controller28 {
 		
 		List<Employee> list2 = mapper.sql3("%" + search + "%");
 		
-		model.addAttribute("list2", list2);
-		
+		model.addAttribute("list2", list2);	
+	}
+	
+	@GetMapping("link4")
+	public void method4() {
+		mapper.sql4();
+	}
+	
+	@GetMapping("link5")
+	public void method5() {
+		mapper.sql5("eve");
+	}
+	
+	@GetMapping("link6")
+	public void method6() {
+		//3번 카테고리 상품의 평균 가격
+		Double avg = mapper.sql6(3);
+	}
+	
+	@GetMapping("link7")
+	public void method7() {
+		//모든 상품의 평균 가격
+		Double avg = mapper.sql6(0);
 	}
 }
