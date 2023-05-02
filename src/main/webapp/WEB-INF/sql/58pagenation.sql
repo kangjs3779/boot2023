@@ -26,5 +26,5 @@ LIMIT 20, 20;
 SELECT * FROM Customers
 ORDER BY CustomerId DESC
 LIMIT 40, 20;
-
+SELECT* FROM Products;
 SELECT CustomerName name  FROM Customers LIMIT 0, 10;
