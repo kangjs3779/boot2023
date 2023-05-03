@@ -51,8 +51,8 @@ SELECT
 			WHERE s.SupplierID = 1;
             
 SELECT * , COUNT(f.id) fileCount
-FROM Board b JOIN FileNames f ON b.id = f.boardId
-GROUP BY
+FROM Board b LEFT JOIN FileNames f ON b.id = f.boardId
+GROUP BY b.id
 ORDER BY b.id DESC
 LIMIT 0,5;
 
@@ -60,10 +60,23 @@ LIMIT 0,5;
 65575
 65574
 65573
-65572
+65572;
 
 
 
+
+SELECT 
+	b.id,
+	b.title,
+	b.body,
+	b.inserted,
+	b.writer,
+	f.fileName
+FROM Board b LEFT JOIN FileNames f ON b.id = f.boardId
+WHERE b.id = 65580;
+            
+SELECT * FROM Board ORDER BY id DESC;
+SELECT * FROM FileNames;
 
 
 
