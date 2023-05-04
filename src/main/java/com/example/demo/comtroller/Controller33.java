@@ -45,13 +45,16 @@ public class Controller33 {
 		
 		String content = "새로운 파일 내용물";
 		
-		AwsCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
-		AwsCredentialsProvider provider = StaticCredentialsProvider.create(credentials);
+//		AwsCredentials credentials = AwsBasicCredentials.create(accessKey, secretKey);
+//		AwsCredentialsProvider provider = StaticCredentialsProvider.create(credentials);
+//		
+//		S3Client s3 = S3Client.builder()
+//				.credentialsProvider(provider)
+//				.region(region)
+//				.build();
 		
-		S3Client s3 = S3Client.builder()
-				.credentialsProvider(provider)
-				.region(region)
-				.build();
+		
+		
 		// s3에 파일 업로드
 		PutObjectRequest objectRequest = PutObjectRequest.builder()
 				.bucket(bucketName)
