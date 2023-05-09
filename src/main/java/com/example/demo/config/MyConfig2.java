@@ -21,7 +21,7 @@ public class MyConfig2 {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.formLogin()
 			.loginPage("/sub34/mylogin")
-			.defaultSuccessUrl("/list", true)
+			.defaultSuccessUrl("/sub34/loginSuccess", true)
 			.usernameParameter("id") //username(기본값)
 			.passwordParameter("pw"); //password(기본값)
 		//13번 라인이 없었을 때에는 아무것도 뜨지 않다가 로그인 필터가 설정이 된 것이다 -> 그럼 로그인 페이지가 뜸!!
