@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.*;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
@@ -13,8 +14,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.expression.*;
 
 @Configuration
+@EnableMethodSecurity
 public class MyConfig2 {
 	
 	@Bean
@@ -34,6 +37,7 @@ public class MyConfig2 {
 		//요청을 /abc로 보냄 -> 그럼 로그인페이지로 redirect됨 -> 로그인하고 인증이 되면 /abc로 보내줌
 		//근데 13번 라인에 trFue로 두면
 		// /abc로 요청을 보냄 -> 로그인 페이지로 redirect -> 로그인함 -> /list로 감
+		
 		http.authorizeHttpRequests().anyRequest().permitAll();
 		// abc 요청말고는 어떤 요청이든지 다 허용한다 = abc는 로그인을 했을 때만 가능하고 다른 애들은 다 가능
 		
