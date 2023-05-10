@@ -77,6 +77,7 @@ WHERE b.id = 65580;
             
 SELECT * FROM Board ORDER BY id DESC;
 SELECT * FROM FileNames;
-
+SELECT fileName FROM FileNames WHERE boardId = 65575;
+SELECT * FROM Board WHERE id = 65576;
 
 

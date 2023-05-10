@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.*;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.core.authority.*;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.User.UserBuilder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -56,12 +57,18 @@ public class MyConfig2 {
 		UserDetails user1 = User.builder()
 				.username("user1")
 				.password(pw1)
-				.authorities(List.of())
+				.authorities(List.of(
+						new SimpleGrantedAuthority("admin"),
+						new SimpleGrantedAuthority("manager")
+						))
 				.build();
 		UserDetails user2 = User.builder()
 				.username("user2")
 				.password(pw2)
-				.authorities(List.of())
+				.authorities(List.of(
+						new SimpleGrantedAuthority("manager"),
+						new SimpleGrantedAuthority("user")
+						))
 				.build();
 		
 		return new InMemoryUserDetailsManager(user1, user2);
