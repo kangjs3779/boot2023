@@ -93,4 +93,25 @@ public class Controller37 {
 	public void method7(@RequestBody List<Dto1> dto) {
 		dto.forEach(e -> System.out.println(e));
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

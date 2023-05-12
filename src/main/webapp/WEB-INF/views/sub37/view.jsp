@@ -29,10 +29,14 @@
 	<input type="number" id="inputAge" placeholder="나이" /> <br />
 	<button id="btn8">전송</button>
 	<hr />
-	<input type="text" id="name2" placeholder="이름">
-	<input type="text" id="email2" placeholder="이메일">
-	<input type="number" id="score2" placeholder="점수">
-	<input type="radio" id="married2" placeholder="결혼" value="true">
+	<input type="text" id="name2" placeholder="이름"> <br />
+	<input type="text" id="email2" placeholder="이메일"> <br />
+	<input type="number" id="score2" placeholder="점수"> <br />
+	<select id="married2" >
+		<option value="false">미혼</option>
+		<option value="true">기혼</option>
+	</select>
+	<!-- 체크박스로 하는 방법 -->
 	<button id="btn9">전송</button>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
